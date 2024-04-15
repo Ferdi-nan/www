@@ -1,0 +1,141 @@
+html{
+	background: #eee2dc;
+}
+.container{
+
+	font-family: 'Varela Round', sans-serif;
+}
+
+/*=== FOKUS TRAINING ÜBUNG===================================================================================*/
+.fokus{
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	margin: 80px 30px 10px 30px;
+
+	line-height: 1.2;
+	font-size: 20px;
+}
+@media (min-width: 700px){
+	p{margin-top: 9vw;}
+	.fokus{
+		margin-top: 30px;
+	}
+}
+p{max-width: 700px;}
+.item1, .item2, .item3{
+	position: relative;
+	border-radius: 50%;
+	top: 5vw;
+	left: 7vw;
+
+	align-content: center;
+}
+.item1{
+	width: 30vw;
+	height: 30vw;
+	min-width: 155px;
+	min-height: 155px;
+	max-width: 300px;
+	max-height: 300px;
+	background: orange;
+	z-index: 9;
+
+	transform: translate(-40%, 20%);
+
+	animation-name: nah;
+	animation-duration: 8s;
+	animation-iteration-count: infinite;
+}
+@keyframes nah {
+	0%{filter: blur(0px);}
+	16%{filter: blur(0px);}
+	22%{filter: blur(4px);}
+	40%{filter: blur(4px);}
+	46%{filter: blur(6px);}
+	56%{filter: blur(6px);}
+	70%{filter: blur(4px);}
+	80%{filter: blur(4px);}
+	100%{filter: blur(0px);}
+}
+
+.item2{
+	width: 22vw;
+	height: 22vw;
+	min-width: 125px;
+	min-height: 125px;
+	max-width: 225px;
+	max-height: 225px;
+	background: #7436be;
+	z-index: 7;
+
+	transform: translate(-05%, 30%);
+
+	animation-name: meter;
+	animation-duration: 8s;
+	animation-iteration-count: infinite;
+}
+@keyframes meter {
+	0%{filter: blur(4px);}
+	16%{filter: blur(4px);}
+	22%{filter: blur(0px);}
+	40%{filter: blur(0px);}
+	46%{filter: blur(4px);}
+	56%{filter: blur(4px);}
+	70%{filter: blur(0px);}
+	80%{filter: blur(0px);}
+	100%{filter: blur(4px);}
+}
+
+.item3{
+	width: 12vw;
+	height: 12vw;
+	min-width: 80px;
+	min-height: 80px;
+	max-width: 125px;
+	max-height: 125px;
+	background: #4E4CC8;
+	z-index: 5;
+
+	transform: translate(20%, 50%);
+
+	animation-name: ferne;
+	animation-duration: 8s;
+	animation-iteration-count: infinite;
+}
+@keyframes ferne {
+	0%{filter: blur(8px);}
+	16%{filter: blur(8px);}
+	22%{filter: blur(4px);}
+	40%{filter: blur(4px);}
+	46%{filter: blur(0px);}
+	56%{filter: blur(0px);}
+	70%{filter: blur(4px);}
+	80%{filter: blur(4px);}
+	100%{filter: blur(8px);}
+}
+
+/*= Fertig BUTTON=========================================================*/
+.fertig{
+	position: fixed;
+	text-align: center;
+	justify-content: center;
+	height: 38px;
+	width: 90px;
+	bottom: 3vw;
+	right: 5vw;
+	padding-top: 10px;
+	border-radius: 5px;
+	background: #4E4CC8;
+	color: #eee2dc;
+	z-index: 99;
+}
+a.fertig{
+	display: block;
+	height: 100%;
+	width: 100%;
+	text-decoration: none;
+	color: #eee2dc;
+}

@@ -1,0 +1,145 @@
+html {
+	background: #eee2dc;
+}
+#timer {
+	font-size: 50px;
+	font-weight: bold;
+
+	margin-left: auto;
+	margin-right: auto;
+
+	font-size: 70px;
+}
+@media (min-width: 700px){
+	#timer{font-size: 210px;}
+}
+
+#soundButton {
+            border: 1px solid black;
+            border-radius: 11px;
+            background: none;
+            width: 22vw;
+            height: 100%;
+            min-height: 38px;
+
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+
+    cursor: pointer;
+
+	background: orange;
+	box-shadow: inset 0px 0px 10px 2px darkorange;
+	color: /*#eee2dc*/black;
+
+    animation-name: soundbutton;
+	animation-duration: 2s;
+	animation-delay: 1s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;}
+
+@keyframes soundbutton{
+			0% {opacity: 0.8;box-shadow: inset 0px 0px 10px 2px darkorange;}
+			10%{opacity: 1;box-shadow: inset 0px 0px 30px 2px #9e7a4c;}
+			30%{opacity: 1;box-shadow: inset 0px 0px 10px 2px darkorange;}
+		}
+
+@media (min-width: 700px){
+	#soundButton{width: 10vw;
+		min-height: 50px;}
+}
+
+#message{
+	width: 250px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	color: black;
+}
+.container{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	height: 90vh;
+	width: 100%;
+	min-height: 54vw;
+
+
+	font-family: 'Varela Round', sans-serif;
+	font-size: 20px;
+	line-height: 1.2;
+}
+.ganz-oben{
+	position: absolute;
+	top: 30px;
+	right: 35px;
+}
+.oben{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-self: center;
+	color: orange;
+}
+@media (min-width: 700px){
+	.oben{margin-top: 30vw;}
+}
+
+p{margin: 30px 20px 10px 20px;}
+
+.train-relax{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: absolute;
+	bottom: 40px;
+}
+@media (min-width: 700px){
+	.train-relax{
+		position: relative;
+		top: 5vw;
+	}
+}
+.zeile-zwei{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+
+/*====================================*/
+.timer-relax, .timer-train{
+	text-transform: uppercase;
+	text-align: center;
+	color: black;
+	margin: 10px;
+}
+.timer-relax{
+	color: #7436be;
+}
+.timer-train{
+	margin-left: 15px;
+	color: #4E4CC8;
+}
+@media (min-width: 700px){
+	.timer-relax, .timer-train{
+		margin-top: 3vw;
+		width: 15vw;
+		height: 20vw;
+		max-height: 480px;
+		max-width: 480px;
+	}
+}
+
+/*==== weis nicht genau, was das ist====
+.knopf{
+	background: red;
+	border: 2px solid black;
+	padding: 20px;
+	margin: 20px;
+	opacity: 1;
+}
+*/

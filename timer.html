@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Timer</title>
+	<link href="assets/css/reset.css" rel="stylesheet">
+	<link href="assets/css/style-timer.css" rel="stylesheet">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="ganz-oben">
+			<!-- A Button to activate or deactivate sound output. It changes its
+		         behaviour as soon as the timer finishes. Then the button will
+		         only pause the sound.
+		     -->
+		    <button onclick="onSoundButtonClick()" id="soundButton">allow sound</button>
+		</div>
+		<div class="oben">
+		    <span id="timer">Hallo</span>
+		    <br>
+		    
+		    <div id="message" hidden>
+		        Der Timer ist vorbei, deine Augen schonen you must!
+		        <br>
+		        Du toller Mensch!!
+		    </div>
+		    
+		</div>
+
+
+		<div class="train-relax">
+			<div>
+				<p>Jetzt eine Übung machen:</p>
+			</div>
+			<div class="zeile-zwei">
+				<a href="relax/relax-start.html"><div class="timer-relax">Entspannung</div></a>
+				<a href="train/train-start.html"><div class="timer-train">Training</div></a>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+
+
+<!--Das Script wurde von J. Rieke (Informatik-Student) entwickelt.
+    Ich war nur dabei und habe möglichst aktiv mitgedacht..-->
+<script>
+
+    // -- Timer variables
+
+    // Presents a visual timer on the page
+    const timerElement = document.getElementById("timer")
+    // The number of seconds the timer should run
+    const timeLimit = 120
+    // The current number of seconds that has already passed
+    let timeLeftToRun = timeLimit
+    // Defines if the time left to run is zero or not
+    let isTimerFinished = false
+    // Declination of "interval" variable to stop the interval function later
+    let interval
+
+
+    // -- Sound controls variables
+
+    // A sound to play at the end of the timer
+    let audio = new Audio('locus.mp3')
+    const controlSoundButton = document.getElementById("soundButton")
+    let isSoundOn = false
+    let isSoundInitialised = false
+
+    // -- Sound control Functions
+
+    function onSoundButtonClick () {
+        if (isTimerFinished) {
+            toggleSound()
+        }
+        else {
+            allowSound()
+        }
+    }
+
+    // Defines the functionality of the "soundButton" if the timer has
+    // already finished.
+    function toggleSound () {
+        if (isSoundOn) {
+            audio.pause()
+        }
+        else {
+            audio.play()
+        }
+        isSoundOn = !isSoundOn
+        controlSoundButton.innerText = isSoundOn ? "pause" : "play"
+    }
+
+    // Defines the functionality of the "soundButton" while the timer
+    // is still running.
+    function allowSound () {
+        isSoundOn = !isSoundOn
+        controlSoundButton.innerText = isSoundOn ? "switch sound off" : "switch sound on"
+
+        if (!isSoundInitialised) {
+            audio.play()
+            audio.pause()
+            isSoundInitialised = true
+        }
+    }
+
+    // Message functions
+
+    function showMessage () {
+        const messageElement = document.getElementById("message")
+        messageElement.attributes.removeNamedItem("hidden")
+    }
+
+
+    // Timer functions
+
+    function beautifyNumber (value) {
+        return value < 10 ? "0" + value : value
+    }
+
+    function updateTimerElementText () {
+        const seconds = Math.floor(timeLeftToRun / 60)
+        const minutes = timeLeftToRun % 60
+        // Apply DOM manipulation
+        timerElement.innerText =
+            "" + beautifyNumber(seconds) + ":" + beautifyNumber(minutes)
+    }
+
+    // Called every time the timer is updated
+    function updateTimer () {
+        timeLeftToRun--
+        updateTimerElementText()
+
+        if (timeLeftToRun === 0) {
+            endTimer()
+        }
+    }
+
+    // Called only once when the timer finishes
+    function endTimer () {
+        clearInterval(interval)
+        isTimerFinished = true
+        if (isSoundOn) {
+            audio.play()
+        }
+        controlSoundButton.innerText = isSoundOn ? "pause" : "play"
+        showMessage()
+    }
+
+
+    // -- Main code
+
+    updateTimerElementText()
+
+    // Definition of the "interval" variable to stop the interval after 60 seconds
+    interval = setInterval(updateTimer, 1000)
+
+</script>
+
+</html>

@@ -1,0 +1,144 @@
+html {
+	background: #eee2dc;
+	overflow: hidden;
+}
+.container{
+	display: flex;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+	font-family: 'Varela Round', sans-serif;
+}
+.seite{
+	margin: 50px 20px 10px 20px;
+	color: black;
+	height: 100%;
+	font-size: 25px;
+	line-height: 1.5;
+	max-width: 800px;
+	align-self: center;
+	z-index: 99;
+
+	animation-name: inhalt;
+	animation-duration: 10s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+@keyframes inhalt {
+	0%{color: black;}
+	50%{color: black;}
+	70%{color: #eee2dc;}
+	100%{color: #eee2dc;}
+}
+
+.kreis1, .kreis2{
+	transform: translate(-50%, -50%);
+	min-height: 80px;
+	min-width: 30px;
+	height: 15vw;
+	width: 6vw;
+	border-radius: 50%;
+	background: #7436be;
+	position: absolute;
+	top: 40vh;
+	z-index: 1;
+}
+.kreis1{
+	left: 48vw;
+	animation-name: kreis-eins;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+@media (max-width: 600px){
+	.kreis1{animation-name: kreis-eins-handy;}
+	@keyframes kreis-eins-handy{
+		/*alterer code, der auf dem Handy funktioniert:*/
+	0%{top: 38vh;} /*Hände reiben beginnt..*/
+	5%{top: 42vh;}
+	10%{top: 38vh; left: 48vw;}
+	20%{top: 42vh; width: 30px; height: 80px; left: 48vw;}/*... endet*/
+	40%{top: 40vh; width: 80px; height: 100px; left: calc(45vw - 80px); background: #7436be;} /*Hände öffnen*/
+	50%{border-radius: 50%;}
+	70%{top: 40vh; width: 130vw; height: 150vh; left: 10vw; background: black;}
+	100%{top: 60vh; width: 130vw; height: 150vh; left: 10vw; background: black; border-radius: 0px;}
+	}
+}
+@keyframes kreis-eins {
+	0%{top: 38vh;} /*Hände reiben beginnt..*/
+	5%{top: 42vh;}
+	10%{top: 38vh;}
+	20%{top: 42vh; width: 6vw; left: 48vw;}
+	40%{top: 40vh; width: 15vw; height: 15vw; left: 38vw;}
+	50%{border-radius: 50%;}
+	70%{top: 50vh; left: 20vw; background: black; width: 130vw; height: 140vw;}
+	100%{top: 50vh; left: 20vw; background: black; width: 130vw; height: 140vw; border-radius: 0px;}
+
+	
+}
+.kreis2{
+	left: 52vw;
+	animation-name: kreis-zwei;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+@keyframes kreis-zwei {
+	0%{top: 42vh;}
+	5%{top: 38vh;}
+	10%{top: 42vh;}
+	20%{top: 38vh; width: 6vw; left: 52vw;}
+	40%{top: 40vh; width: 15vw; height: 15vw; left: 62vw;}
+	50%{border-radius: 50%;}
+	70%{top: 50vh; left: 70vw; background: black; width: 130vw; height: 140vw;}
+	100%{top: 50vh; left: 80vw; background: black; width: 130vw; height: 140vw; border-radius: 0px;}
+}
+@media (max-width: 600px){
+	.kreis2{animation-name: kreis-zwei-handy;}
+	@keyframes kreis-zwei-handy{
+	/*alterer code, der auf dem Handy funktioniert:*/
+	0%{top: 42vh;} /*Hände reiben beginnt..*/
+	5%{top: 38vh;}
+	10%{top: 42vh; left: 52vw;}
+	20%{top: 38vh; width: 30px; height: 80px; left: 52vw;}/*... endet*/
+	40%{top: 40vh; width: 80px; height: 100px; left: calc(50vw + 80px); background: #7436be;} /*Hände öffnen*/
+	50%{border-radius: 50%;}
+	70%{top: 40vh; width: 130vw; height: 150vh; left: 55vw; background: black;}
+	100%{top: 60vh; width: 130vw; height: 150vh; left: 55vw; background: black; border-radius: 0px;}
+	}
+}
+/*================================================================================*/
+@media (min-width: 500px;){
+	.kreis1, .kreis2{
+		height: 20vw;
+		width: 10vw;
+	}
+	.kreis1{
+		left: calc(50vw - 5vw);
+	}
+	.kreis2{
+		left: calc(50vw + 5vw);
+	}
+}
+
+.fertig{
+	position: fixed;
+	text-align: center;
+	justify-content: center;
+	height: 38px;
+	width: 90px;
+	bottom: 3vw;
+	right: 5vw;
+	padding-top: 10px;
+	border-radius: 5px;
+	background: #7436be;
+	color: #eee2dc;
+	z-index: 99;
+}
+a.fertig{
+	display: block;
+	height: 100%;
+	width: 100%;
+	text-decoration: none;
+	color: #eee2dc;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Augentraining</title>
+	<link href="../assets/css/reset.css" rel="stylesheet">
+	<link href="../assets/css/style-main.css" rel="stylesheet">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet"> 
+
+	<style type="text/css">
+		body {height: 100vh; width: 100vw; overflow: hidden;
+			background: #eee2dc;}
+		.fertig{opacity: 0.5;
+			animation-name: fertig;
+			animation-duration: 2s;
+			animation-delay: 100s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;}
+		@keyframes fertig{
+			0% {opacity: 0.5;}
+			30%{opacity: 1;}
+			60%{opacity: 1;}
+			90%{opacity: 0.7;}
+		}
+	</style>
+</head>
+
+<body class="uebung">
+	<div class="container">
+		<div class="beweglich">
+			<div class="waaghui"><div class="waagerecht-kreis"></div></div>
+			<div class="senkhui"><div id="senkrecht-kreis">    </div></div>
+			<div class="huiui"> <div class="kreisbahn"><div class="kreis-animation"></div></div></div>
+			<div class="achthui"><div class="achterbahn">
+				<div class="achterbahn-links"><div class="acht-links"></div></div>
+				<div class="achterbahn-rechts"><div class="acht-rechts"></div></div>
+			</div></div>
+			
+		<!--Timeline:
+			01s: pause
+			06s: waagerecht
+			1s: pause
+			5s: senkrecht
+			1s: pause
+			4x14s: kreis
+			1s: pause
+			2x14s: acht
+		-->
+		
+		<a href="../danke.html"><div class="fertig">Fertig</div></a>
+	</div>
+</body>
+</html>
